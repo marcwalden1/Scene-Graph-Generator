@@ -62,6 +62,18 @@ DETECTED_SGG_DIR /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-G
 The [output_visualizations.ipynb](output_visualizations.ipynb) visualizes the Scene Graphs for three custom images of my choice. Some adjustments are made to the original repository jupyter notebook file for this visualization. The inputs of our visualization code are custom_data_info.json (including the possible objects ind_to_classes and relationships ind_to_predicates to detect), and custom_prediction.json (providing the specific information for each image). These are the files that will be created inside of DETECTED_SGG_DIR if the commands above were run wihtout error. Note that the file paths specified inside each of these files will need to work in order for the visualization to be successful. Note that the number of objects and relationships displayed in the image can be adjusted. The model will pick the top k that have highest probabilty of being detected.
 
 ### Future Work
+This project demonstrates the capability of scene graph generation for understanding visual relationships in static images. Looking forward, there are exciting opportunities to extend this work, including:
+
+1. Dynamic Scene Analysis:
+- Extending the scene graph generator to process sequences of images (e.g., video frames) for dynamic scene understanding. This would involve generating frame-by-frame scene graphs and analyzing changes over time to capture motion, interactions, and events.
+
+2. Natural Language Video Synopses:
+- Leveraging scene graph outputs as structured data inputs for large language models (LLMs) like GPT or similar architectures.
+- The objective would be to produce coherent, natural language descriptions of videos by aggregating frame-level scene graphs and contextualizing relationships across frames.
+- For example, a scene graph sequence describing "person-holding-camera" followed by "person-taking-photo-of-dog" could be summarized as: "A person takes a picture of a dog."
+
+3. Broader Applications:
+- Applying this framework to tasks like Visual Question Answering, video summarization, or autonomous robotics. 
 
 
 ### References 
