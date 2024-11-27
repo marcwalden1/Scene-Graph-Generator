@@ -36,7 +36,8 @@ pip install ninja yacs cython matplotlib tqdm opencv-python overrides
 
 ```
 
-Follow PyTorch installation in https://pytorch.org/get-started/locally/
+Follow PyTorch installation in https://pytorch.org/get-started/locally/ .
+
 These instructions are for CUDA 10.1
 ```bash
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
@@ -65,6 +66,19 @@ print(torch.__version__)
 print(numpy.__version__)
 print(matplotlib.__version__)
 ```
+
+
+This project also requires GloVe embeddings for processing text data in scene graph generation. Ensure that you download and correctly set up the GloVe directory before running the model.
+GloVe Setup Instructions:
+
+- Download GloVe Embeddings: Visit the official GloVe website and download the embeddings. For this project, I recommended to use the glove.6B.zip file.
+
+- Extract GloVe Files: After downloading the zip file, extract it to a desired location. For example:
+```bash
+unzip glove.6B.zip -d path/to/glove/
+```
+This scene graph generator uses 200-dimensional word embeddings, meaning that you will need the glove.6B.200d.txt file for tokenization and embedding purposes. Depending on your PyTorch implementation, you may need to convert this file to glove.6B.200d.pt for compatibility and efficient loading.
+
 
 Now we proceed to install pycocotools and apex inside of our installing directory. 
 ```bash
