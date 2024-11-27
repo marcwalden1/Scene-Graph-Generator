@@ -1,7 +1,7 @@
 # Scene Graph Generator
 
 ### Description
-This project is a reimplementation of the Scene Graph Generation Benchmark based on Kaihua Tang's Scene-Graph-Benchmark repository. Scene graph generation aims to predict objects and the relationships between them (subject-predicate-object) from an input image. It is a crucial task in computer vision, facilitating higher-level understanding of visual scenes and enabling downstream applications like image captioning, visual question answering, and semantic segmentation.
+This project is a reimplementation of the Scene Graph Generation Benchmark based on [Kaihua Tang's Scene-Graph-Benchmark repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md). Scene graph generation aims to predict objects and the relationships between them (subject-predicate-object) from an input image. It is a crucial task in computer vision, facilitating higher-level understanding of visual scenes and enabling downstream applications like image captioning, visual question answering, and semantic segmentation.
 
 
 ### Objectives
