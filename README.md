@@ -1,7 +1,7 @@
 # Scene Graph Generator
 
 ### Description
-This project is a reimplementation of the Scene Graph Generation Benchmark based on [Kaihua Tang's Scene-Graph-Benchmark repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md). It is introduced in the paper [Unbiased Scene Graph Generation from Biased Training](https://openaccess.thecvf.com/content_CVPR_2020/papers/Tang_Unbiased_Scene_Graph_Generation_From_Biased_Training_CVPR_2020_paper.pdf). Scene graph generation aims to predict objects and the relationships between them (subject-predicate-object) from an input image. It is a crucial task in computer vision, facilitating higher-level understanding of visual scenes and enabling downstream applications like image captioning, visual question answering, and semantic segmentation.
+This project is a reimplementation of the Scene Graph Generation Benchmark based on [Kaihua Tang's Scene-Graph-Benchmark repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md). It is introduced in the paper [Unbiased Scene Graph Generation from Biased Training](https://openaccess.thecvf.com/content_CVPR_2020/papers/Tang_Unbiased_Scene_Graph_Generation_From_Biased_Training_CVPR_2020_paper.pdf).  Scene graph generation aims to predict objects and the relationships between them (subject-predicate-object) from an input image. It is a crucial task in computer vision, facilitating higher-level understanding of visual scenes and enabling downstream applications like image captioning, visual question answering, and semantic segmentation. In this project, I include the main difficulties that I faced with implementing this model on a GPU with CUDA 10.1 and my own package versions.
 
 
 ### Objectives
@@ -11,6 +11,7 @@ This project is a reimplementation of the Scene Graph Generation Benchmark based
     - Predicting relationships between object pairs (e.g., dog-chasing-ball).
 - To gain research experience in computer vision and contribute to foundational work in scene understanding.
 - To demonstrate the utility of the Scene Graph Generation model for visual scene analysis using a pre-trained architecture.
+- To include some challenges I faced when implementing this model on a 
 - To provide clear examples of input-output visualizations, making this repository a useful reference for academic and research purposes.
 
 ### Installation Requirements
@@ -48,6 +49,9 @@ TEST.CUSTUM_EVAL True \
 TEST.CUSTUM_PATH /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-Graph-Benchmark.pytorch/checkpoints/custom_images \
 DETECTED_SGG_DIR /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-Graph-Benchmark.pytorch/checkpoints/outputs
 ```
+
+### Scene Graph Visualization
+This section is also taken from the original repository. However, some adjustments are made to the jupyter notebook file to ensure proper visualization. To visualize the Scene Graphs for your own custom images, you can run the jupyter notebook. The inputs of our visualization code are custom_data_info.json (including the possible objects ind_to_classes and relationships ind_to_predicates to detect), and custom_prediction.json (providing the specific information for each image). These are the files that will be created inside of DETECTED_SGG_DIR if you run the commands above wihtout error. Note that the file paths specified inside each of these files will need to work in order for the visualization to be successful. Note that you can adjust the number of objects and relationships displayed in the image. The model will pick the top k that have highest probabilty of being detected.
 
 ### Future Work
 
