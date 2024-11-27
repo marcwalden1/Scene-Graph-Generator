@@ -2,8 +2,10 @@
 
 The following instructions were taken from [Kaihua's repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/DATASET.md). However, there are important details mentioned that need to be fixed in order to avoid running into issues down the line that personally took a while to figure out. 
 
-1. Download the VG images [part1 (9 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip) and [part2 (5 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip). Extract these images to the file datasets/vg/VG_100K.
-2. Download the [scene graphs](https://1drv.ms/u/s!AmRLLNf6bzcir8xf9oC3eNWlVMTRDw?e=63t7Ed) and extract them to datasets/vg/VG-SGG-with-attri.h5.
+In order to download and preprocess the data, you need to:
+
+- Download the VG images [part1 (9 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip) and [part2 (5 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip). Extract these images to the file datasets/vg/VG_100K.
+- Download the [scene graphs](https://1drv.ms/u/s!AmRLLNf6bzcir8xf9oC3eNWlVMTRDw?e=63t7Ed) and extract them to datasets/vg/VG-SGG-with-attri.h5.
 
 Note that the VG Images come in two separate folders which need to be merged. You should keep in mind duplicates. Also, you need to update your correct file paths inside of /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/maskrcnn_benchmark/config/paths_catalog.py
 
