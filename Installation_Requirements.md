@@ -1,5 +1,5 @@
 # Installation
-This project was implemented and tested using an NNVIDIA GeForce GTX 780 Ti with CUDA 10.1 support.
+This project was implemented and tested using an NVIDIA GeForce GTX 780 Ti with CUDA 10.1 support.
 
 ### Requirements
 
