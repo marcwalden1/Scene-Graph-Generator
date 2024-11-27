@@ -17,13 +17,13 @@ This project was implemented and tested using an NVIDIA GeForce GTX 780 Ti with 
 ```bash
 # First, make sure that conda is setup properly within the right environment
 # For that, check that `which conda`, `which pip` and `which python` points to the
-# right path. From a clean conda env, this is what you need to do
+# right path. From a clean conda env, this is what needs to be done
 
 conda create --name scene_graph_benchmark
 conda activate scene_graph_benchmark
 
 ```
-Now that our scene_graph_benchmark conda virtual environement is setup, we can move on to installing the correct dependencies inside of the environment. 
+Now that the scene_graph_benchmark conda virtual environement is setup, we can move on to installing the correct dependencies inside of the environment. 
 
 ```bash
 # this installs the right pip and dependencies for the fresh python
@@ -42,20 +42,19 @@ These instructions are for CUDA 10.1
 ```bash
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 ```
-
-You can check whether Cuda is supported by your GPU and working as intended by running the following command in python:
+The following command in python can be run to check whether CUDA is supported by the GPU and working as intended:
 ```python
 import torch
 print(torch.cuda.is_available())
-# Make sure that your python kernel is setup inside of your scene_graph_benchmark virtual environement. The kernels should match.
+# Make sure that the python kernel is setup inside of the scene_graph_benchmark virtual environement. The kernels should match.
 ```
-If you run into compatibility issues with you pytorch version, you should install compatible versions of numpy and matplotlib.
+To address compatibility issues with pytorch, I suggest using the following versions of numpy and matplotlib
 ```bash
 pip install numpy==1.24.4
 pip install matplotlib==3.1.2
 ```
 
-You can also check that your pytorch, torchvision, python, numpy, and matplotlib versions are correctly setup inside of your virtual environments by running the following commands:
+The following commands can also be run to check that the pytorch, torchvision, python, numpy, and matplotlib versions are correctly setup inside of the virtual environment:
 ```python
 import torchvision
 import torch
@@ -68,7 +67,7 @@ print(matplotlib.__version__)
 ```
 
 
-This project also requires GloVe embeddings for processing text data in scene graph generation. Ensure that you download and correctly set up the GloVe directory before running the model.
+This project also requires GloVe embeddings for processing text data in scene graph generation. Ensure that they are downloaded correctly and set up the GloVe directory before running the model.
 GloVe Setup Instructions:
 
 - Download GloVe Embeddings: Visit the [official GloVe website](https://nlp.stanford.edu/projects/glove/) and download the embeddings. For this project, I recommended to use the glove.6B.zip file.
@@ -77,12 +76,12 @@ GloVe Setup Instructions:
 ```bash
 unzip glove.6B.zip -d path/to/glove/
 ```
-This scene graph generator uses 200-dimensional word embeddings, meaning that you will need the glove.6B.200d.txt file for tokenization and embedding purposes. Depending on your PyTorch implementation, you may need to convert this file to glove.6B.200d.pt for compatibility and efficient loading.
+This scene graph generator uses 200-dimensional word embeddings, meaning that this project uses the glove.6B.200d.txt file for tokenization and embedding purposes. Depending on the PyTorch version implementation, this file may need to be converted to glove.6B.200d.pt for compatibility and efficient loading.
 
 
-Now we proceed to install pycocotools and apex inside of our installing directory. 
+Now proceed to install pycocotools and apex inside of the installing directory. 
 ```bash
-# Keep track of your your working directory. 
+# Keep track of the working directory. 
 export INSTALL_DIR=$PWD
 
 # install pycocotools
@@ -96,11 +95,11 @@ cd $INSTALL_DIR
 git clone https://github.com/NVIDIA/apex.git
 cd apex
 
-# WARNING if you use older Versions of Pytorch (anything below 1.7), you will need a hard reset,
+# WARNING if using older Versions of Pytorch (anything below 1.7), a hard reset is necessary,
 # as the newer version of apex does require newer pytorch versions. Ignore the hard reset otherwise.
 git reset --hard 3fe10b5597ba14a748ebb271a6ab97c09c5701ac
 ```
-We now install this Python package with CUDA and C++ extensions for GPU acceleration and optimization, then clone and build the Scene-Graph-Benchmark repository in development mode. 
+Now this Python package with CUDA and C++ extensions is installed for GPU acceleration and optimization, then clone and build the Scene-Graph-Benchmark repository in development mode. 
 ```bash
 
 python setup.py install --cuda_ext --cpp_ext
@@ -111,9 +110,8 @@ git clone https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch.git
 cd scene-graph-benchmark
 
 # the following will install the lib with
-# symbolic links, so that you can modify
-# the files if you want and won't need to
-# re-build it
+# symbolic links so that the files can be modified
+# without needing to rebuild
 python setup.py build develop
 
 
