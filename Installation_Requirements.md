@@ -34,10 +34,12 @@ conda install h5py
 # scene_graph_benchmark and coco api dependencies
 pip install ninja yacs cython matplotlib tqdm opencv-python overrides
 
-# follow PyTorch installation in https://pytorch.org/get-started/locally/
-# we give the instructions for CUDA 10.1
-conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
+```
 
+Follow PyTorch installation in https://pytorch.org/get-started/locally/
+These instructions are for CUDA 10.1
+```bash
+conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 ```
 
 You can check whether Cuda is supported by your GPU and working as intended by running the following command in python:
@@ -52,7 +54,7 @@ pip install numpy==1.24.4
 pip install matplotlib==3.1.2
 ```
 
-You can also check that your pytorch, torchvision, and python versions are correctly setup inside of your virtual environments by running the following command:
+You can also check that your pytorch, torchvision, python, numpy, and matplotlib versions are correctly setup inside of your virtual environments by running the following commands:
 ```python
 import torchvision
 import torch
@@ -83,9 +85,11 @@ cd apex
 # WARNING if you use older Versions of Pytorch (anything below 1.7), you will need a hard reset,
 # as the newer version of apex does require newer pytorch versions. Ignore the hard reset otherwise.
 git reset --hard 3fe10b5597ba14a748ebb271a6ab97c09c5701ac
+```
+We now install this Python package with CUDA and C++ extensions for GPU acceleration and optimization, then clone and build the Scene-Graph-Benchmark repository in development mode. 
+```bash
 
 python setup.py install --cuda_ext --cpp_ext
-
 
 # install PyTorch Detection
 cd $INSTALL_DIR
@@ -102,3 +106,4 @@ python setup.py build develop
 unset INSTALL_DIR
 
 ```
+
