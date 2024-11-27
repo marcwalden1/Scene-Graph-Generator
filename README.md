@@ -12,3 +12,7 @@ This project is a reimplementation of the Scene Graph Generation Benchmark based
 - To gain research experience in computer vision and contribute to foundational work in scene understanding.
 - To demonstrate the utility of the Scene Graph Generation model for visual scene analysis using a pre-trained architecture.
 - To provide clear examples of input-output visualizations, making this repository a useful reference for academic and research purposes.
+
+### Installation Requirements
+Check [Installation Requirements](Installation_Requirements.md) for installation instructions.
+
