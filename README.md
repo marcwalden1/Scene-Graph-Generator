@@ -69,9 +69,13 @@ DETECTED_SGG_DIR /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-G
 The [output_visualizations.ipynb](output_visualizations.ipynb) visualizes the Scene Graphs for three custom images of my choice. Some adjustments are made to the original repository jupyter notebook file for this visualization. 
 
 **Visualization Requirements**
+
 Input files:
+
     - custom_data_info.json: Contains possible class labels (ind_to_classes) and relationships (ind_to_predicates).
+    
     - custom_prediction.json: Contains the detection results for the images.
+    
 These files are generated in the DETECTED_SGG_DIR directory after running the model.
 
 Note that the file paths specified inside each of these files will need to be accurate in order for the visualization to be successful. Also, the number of objects and relationships displayed in the image can be adjusted. The model will pick the top k that have highest probabilty of being detected.
