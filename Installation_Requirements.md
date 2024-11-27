@@ -15,13 +15,17 @@ This project was implemented and tested using an NNVIDIA GeForce GTX 780 Ti with
 ### Step by step installation
 
 ```bash
-# first, make sure that your conda is setup properly with the right environment
-# for that, check that `which conda`, `which pip` and `which python` points to the
+# First, make sure that conda is setup properly within the right environment
+# For that, check that `which conda`, `which pip` and `which python` points to the
 # right path. From a clean conda env, this is what you need to do
 
 conda create --name scene_graph_benchmark
 conda activate scene_graph_benchmark
 
+```
+Now that our scene_graph_benchmark conda virtual environement is setup, we can move on to installing the correct dependencies inside of the environment. 
+
+```bash
 # this installs the right pip and dependencies for the fresh python
 conda install ipython
 conda install scipy
@@ -34,6 +38,35 @@ pip install ninja yacs cython matplotlib tqdm opencv-python overrides
 # we give the instructions for CUDA 10.1
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 
+```
+
+You can check whether Cuda is supported by your GPU and working as intended by running the following command in python:
+```python
+import torch
+print(torch.cuda.is_available())
+# Make sure that your python kernel is setup inside of your scene_graph_benchmark virtual environement. The kernels should match.
+```
+If you run into compatibility issues with you pytorch version, you should install compatible versions of numpy and matplotlib.
+```bash
+pip install numpy==1.24.4
+pip install matplotlib==3.1.2
+```
+
+You can also check that your pytorch, torchvision, and python versions are correctly setup inside of your virtual environments by running the following command:
+```python
+import torchvision
+import torch
+import numpy
+import matplotlib
+print(torchvision.__version__)
+print(torch.__version__)
+print(numpy.__version__)
+print(matplotlib.__version__)
+```
+
+Now we proceed to install pycocotools and apex inside of our installing directory. 
+```bash
+# Keep track of your your working directory. 
 export INSTALL_DIR=$PWD
 
 # install pycocotools
