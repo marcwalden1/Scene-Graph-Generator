@@ -22,6 +22,10 @@ Check [Installation Requirements](Installation_Requirements.md) for installation
 ### Dataset
 Check [Dataset](Dataset.md) to preprocess the data. 
 
+### The Model
+
+To implement this model, I used this pretrained [Faster R-CNN model](https://1drv.ms/u/s!AmRLLNf6bzcir8xemVHbqPBrvjjtQg?e=hAhYCw) that is provided in [Kaihua's original repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#pretrained-models). Note this can take several minutes to complete. All files from this folder are stored inside /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-Graph-Benchmark.pytorch/checkpoints/pretrained_faster_rcnn.
+
 ### Usage
 In this section I demonstrate how to run the pretrained Scene Graph Detection model from [the original repository](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md) to generate scene graphs for custom images. 
 
