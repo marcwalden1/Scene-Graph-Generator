@@ -33,7 +33,7 @@ In this section I demonstrate how to run the SGDet model for custom images, whic
 
 It is important that each of the lines in the command below are understood to ensure correct implementation.
 
-# This was my command to run the model:
+**This was my command to run the model:**
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
@@ -57,7 +57,8 @@ TEST.CUSTUM_EVAL True \
 TEST.CUSTUM_PATH /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-Graph-Benchmark.pytorch/checkpoints/custom_images \
 DETECTED_SGG_DIR /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-Graph-Benchmark.pytorch/checkpoints/outputs
 ```
-# Key Considerations
+
+**Key Considerations**
 - Input images must be in .jpg format and stored at the path specified in TEST.CUSTUM_PATH.
 - Ensure MODEL.ROI_RELATION_HEAD.USE_GT_BOX and MODEL.ROI_RELATION_HEAD.USE_GT_OBJECT_LABEL are set to False for SGDet.
 - Set MODEL.ROI_RELATION_HEAD.CAUSAL.CONTEXT_LAYER to "none" if a CUDA out-of-memory error is encountered.
@@ -67,7 +68,7 @@ DETECTED_SGG_DIR /home/marc/Desktop/Scene-Graph-Benchmark.pytorch-master/Scene-G
 ### Scene Graph Visualization
 The [output_visualizations.ipynb](output_visualizations.ipynb) visualizes the Scene Graphs for three custom images of my choice. Some adjustments are made to the original repository jupyter notebook file for this visualization. 
 
-# Visualization Requirements
+**Visualization Requirements**
 Input files:
     - custom_data_info.json: Contains possible class labels (ind_to_classes) and relationships (ind_to_predicates).
     - custom_prediction.json: Contains the detection results for the images.
@@ -78,15 +79,15 @@ Note that the file paths specified inside each of these files will need to be ac
 ### Future Work
 This project demonstrates the capability of scene graph generation for understanding visual relationships in static images. Looking forward, there are exciting opportunities to extend this work, including:
 
-# 1. Dynamic Scene Analysis:
+**1. Dynamic Scene Analysis:**
 - Extending the scene graph generator to process sequences of images (e.g., video frames) for dynamic scene understanding. This would involve generating frame-by-frame scene graphs and analyzing changes over time to capture motion, interactions, and events.
 
-# 2. Natural Language Video Synopses:
+**2. Natural Language Video Synopses:**
 - Leveraging scene graph outputs as structured data inputs for large language models (LLMs) like GPT or similar architectures.
 - The objective would be to produce coherent, natural language descriptions of videos by aggregating frame-level scene graphs and contextualizing relationships across frames.
 - For example, a scene graph sequence describing "person-holding-camera" followed by "person-taking-photo-of-dog" could be summarized as: "A person takes a picture of a dog."
 
-# 3. Broader Applications:
+**3. Broader Applications:**
 - Applying this framework to tasks like Visual Question Answering, video summarization, or autonomous robotics. 
 
 
