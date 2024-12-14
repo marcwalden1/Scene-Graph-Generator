@@ -70,7 +70,7 @@ print(matplotlib.__version__)
 This project also requires GloVe embeddings for processing text data in scene graph generation. Ensure that they are downloaded correctly and set up the GloVe directory before running the model.
 GloVe Setup Instructions:
 
-- Download GloVe Embeddings: Visit the [official GloVe website](https://nlp.stanford.edu/projects/glove/) and download the embeddings. For this project, I recommended to use the glove.6B.zip file.
+- Download GloVe Embeddings: Visit the official [Stanford GloVe website](https://nlp.stanford.edu/projects/glove/) and download the embeddings. For this project, I recommended to use the glove.6B.zip file.
 
 - Extract GloVe Files: After downloading the zip file, extract it to a desired location. For example:
 ```bash
